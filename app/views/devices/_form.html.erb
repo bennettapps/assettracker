@@ -1,0 +1,15 @@
+<%= simple_form_for(@device) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :assigned_to, collection: Manufacturer.all, label_method: :name, value_method: :id, include_blank: true %>
+    <%= f.input :assigned_to, collection: Category.all, label_method: :name, value_method: :id, include_blank: true %>
+    <%= f.input :assigned_to, collection: Employee.all, label_method: :full_name, value_method: :id, include_blank: true %>
+    </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
