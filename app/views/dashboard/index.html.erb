@@ -11,12 +11,12 @@
       <th>Available</th>
     </tr>
     <tbody>
-      <% @devices.each do |device| %>
+      <% @category.each do |category| %>
         <tr>
-          <td><%= device.name %></td>
-          <td><%= 0 %></td>
-          <td><%= 0 %></td>
-          <td><%= 0 %></td>
+          <td><%= category.name %></td>
+          <td><%= @device.where(category: category).count %></td>
+          <td><%= @device.where(category: category).where.not(employee: nil).count %></td>
+          <td><%= @device.where(category: category).where(employee: nil).count %></td>
         </tr>
       <% end %>
     </tbody>

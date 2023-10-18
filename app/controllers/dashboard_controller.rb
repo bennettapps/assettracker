@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
   def index
-    @devices = Device.all
+    @category = Category.all
+    @device = Device.all
     @software = Software.all
   end
 end

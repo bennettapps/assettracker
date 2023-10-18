@@ -16,6 +16,8 @@
     
     <p>
         <strong>Assigned To:</strong>
-        <%= device.employee.full_name %>
+        <% if device.employee %>
+            <%= device.employee.full_name %>
+        <% end %>
     </p>
 </div>
