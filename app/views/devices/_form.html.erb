@@ -4,9 +4,7 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :assigned_to, collection: Manufacturer.all, label: 'Manufacturer', value_method: :id, include_blank: true %>
-    <%= f.input :assigned_to, collection: Category.all, label: 'Category', value_method: :id, include_blank: true %>
-    <%= f.input :assigned_to, collection: Employee.all, label: 'Employee', label_method: :full_name, value_method: :id, include_blank: true %>
+    <%= f.input :assigned_to_id_id, collection: Employee.all, label: 'Employee', label_method: :full_name, value_method: :id, include_blank: true %>
     </div>
 
   <div class="form-actions">

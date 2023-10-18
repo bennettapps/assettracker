@@ -65,6 +65,6 @@ class DevicesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def device_params
-      params.require(:device).permit(:name, :assigned_to_id)
+      params.require(:device).permit(:name, :assigned_to_id_id)
     end
 end
