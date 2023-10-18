@@ -10,14 +10,14 @@
     </p>
 
     <p>
-        <stong>Manufacturer:</strong>
+        <strong>Manufacturer:</strong>
         <%= device.manufacturer.name %>
     </p>
     
     <p>
         <strong>Assigned To:</strong>
         <% if device.employee %>
-            <%= device.employee.full_name %>
+            <%= link_to device.employee.full_name, employee_path(device.employee) %>
         <% end %>
     </p>
 </div>

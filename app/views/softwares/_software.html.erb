@@ -4,4 +4,12 @@
     <%= software.name %>
   </p>
 
+  <p>
+    <strong>Assigned Employees:</strong>
+    <ul>
+      <% software.employee.each do |employee| %>
+        <li><%= link_to employee.full_name, employee_path(employee) %></li>
+      <% end %>
+    </ul>
+  </p>
 </div>

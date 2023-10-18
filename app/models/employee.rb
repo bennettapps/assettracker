@@ -4,5 +4,5 @@ class Employee < ApplicationRecord
   end
 
   has_many :devices
-
+  has_and_belongs_to_many :softwares
 end
