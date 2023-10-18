@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_17_023445) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_18_012906) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -47,10 +47,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_023445) do
 
   create_table "devices", force: :cascade do |t|
     t.string "name"
-    t.integer "assigned_to_id_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["assigned_to_id_id"], name: "index_devices_on_assigned_to_id_id"
+    t.integer "employee_id"
+    t.index ["employee_id"], name: "index_devices_on_employee_id"
   end
 
   create_table "employees", force: :cascade do |t|
@@ -74,5 +74,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_023445) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "devices", "employees", column: "assigned_to_id_id"
+  add_foreign_key "devices", "employees"
 end
