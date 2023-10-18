@@ -37,9 +37,9 @@
       <% @software.each do |software| %>
         <tr>
           <td><%= software.name %></td>
-          <td><%= 0 %></td>
-          <td><%= 0 %></td>
-          <td><%= 0 %></td>
+          <td><%= software.license_count %></td>
+          <td><%= software.employee.count %></td>
+          <td><%= software.license_count >= software.employee.count %></td>
         </tr>
       <% end %>
     </tbody>
