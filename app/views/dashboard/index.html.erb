@@ -14,9 +14,9 @@
       <% @categories.each do |category| %>
         <tr>
           <td><%= category.name %></td>
-          <td><%= @devices.where(category: category).count %></td>
-          <td><%= @devices.where(category: category).where.not(employee: nil).count %></td>
-          <td><%= @devices.where(category: category).where(employee: nil).count %></td>
+          <td><%= category.devices.count %></td>
+          <td><%= category.devices.where.not(employee: nil).count %></td>
+          <td><%= category.devices.where(employee: nil).count %></td>
         </tr>
       <% end %>
     </tbody>
