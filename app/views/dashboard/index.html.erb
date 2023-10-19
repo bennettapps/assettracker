@@ -38,8 +38,8 @@
         <tr>
           <td><%= software.name %></td>
           <td><%= software.license_count %></td>
-          <td><%= software.employee.count %></td>
-          <td><%= software.license_count >= software.employee.count %></td>
+          <td><%= software.employees.count %></td>
+          <td><%= software.license_count >= software.employees.count %></td>
         </tr>
       <% end %>
     </tbody>
