@@ -11,12 +11,12 @@
       <th>Available</th>
     </tr>
     <tbody>
-      <% @category.each do |category| %>
+      <% @categories.each do |category| %>
         <tr>
           <td><%= category.name %></td>
-          <td><%= @device.where(category: category).count %></td>
-          <td><%= @device.where(category: category).where.not(employee: nil).count %></td>
-          <td><%= @device.where(category: category).where(employee: nil).count %></td>
+          <td><%= @devices.where(category: category).count %></td>
+          <td><%= @devices.where(category: category).where.not(employee: nil).count %></td>
+          <td><%= @devices.where(category: category).where(employee: nil).count %></td>
         </tr>
       <% end %>
     </tbody>
@@ -34,7 +34,7 @@
       <th>Compliant?</th>
     </tr>
     <tbody>
-      <% @software.each do |software| %>
+      <% @softwares.each do |software| %>
         <tr>
           <td><%= software.name %></td>
           <td><%= software.license_count %></td>
