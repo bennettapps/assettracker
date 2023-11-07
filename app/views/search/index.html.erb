@@ -1,9 +1,19 @@
 <h1>Search</h1>
 
 <%= form_with url: "/search", method: :get do |form| %>
-    <%= form.label :query, "Search for:" %>
-    <%= form.text_field :query, :value => @query %>
-    <%= form.submit "Search" %>
+    <div>
+        <%= form.label :query, "Search for:", :class => "form-label" %>
+        <%= form.text_field :query, :value => @query, :class => "form-control" %>
+    </div>
+
+    <div>
+        <%= form.label :category_id, "Category:", :class => "form-label" %>
+        <%= form.select :category_id, Category.all.map { |c| [c.name, c.id]}, :selected => @category_id, :include_blank => true, :html_options => { :class => "form-select" } %>
+    </div>
+
+    <div>
+        <%= form.submit "Search", :class => "btn btn-outline-primary" %>
+    </div>
 <% end %>
 
 <% if @query.present? %>
